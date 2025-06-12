@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos y Películas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-image: url('fondo.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+        }
+        #mini-player {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            z-index: 1100;
+            background: rgba(255,255,255,0.7);
+            border-radius: 10px;
+            padding: 5px 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        #logo-container {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            width: 110px;
+            height: 110px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #logo {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 0 8px rgba(255,255,255,0.4), 
+                        0 0 30px 10px rgba(0,0,0,0.15);
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        .ventana-texto {
+            width: 80%;
+            margin: 30px auto 30px auto;
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .media-section {
+            margin: 40px auto 20px auto;
+            width: 80%;
+            background: rgba(255,255,255,0.7);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+        }
+        .media-section h3 {
+            margin-top: 0;
+        }
+        .media-section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .media-section iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            margin: 10px 0;
+        }
+        .descripcion-video {
+            margin-bottom: 10px;
+            font-style: italic;
+            color: #333;
+        }
+        /* Footer dividido */
+        footer {
+            margin-top: 30px;
+            padding: 20px 0;
+            background-color: rgba(241, 241, 241, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .footer-section {
+            width: 45%;
+            text-align: left;
+            padding: 0 30px;
+        }
+        .footer-section.right {
+            text-align: right;
+        }
+        @media (max-width: 700px) {
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-section {
+                width: 90%;
+                text-align: center !important;
+                padding: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mini reproductor MP3 -->
+    <div id="mini-player">
+        <audio id="audio-fondo" controls loop>
+            <source src="musica.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <!-- Logotipo circular y difuminado -->
+    <div id="logo-container">
+        <img id="logo" src="Logo.jpg" alt="Logotipo">
+    </div>
+
+    <h1>Juegos y Películas</h1>
+
+    <h2>Tabla de Juegos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del Juego</th>
+                <th>Género</th>
+                <th>Año de Lanzamiento</th>
+                <th>Plataforma</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>The Legend of Zelda: Breath of the Wild</td>
+                <td>Aventura</td>
+                <td>2017</td>
+                <td>Nintendo Switch</td>
+                <td>10/10</td>
+            </tr>
+            <tr>
+                <td>God of War</td>
+                <td>Acción</td>
+                <td>2018</td>
+                <td>PlayStation 4</td>
+                <td>9.5/10</td>
+            </tr>
+            <tr>
+                <td>Among Us</td>
+                <td>Multijugador</td>
+                <td>2018</td>
+                <td>PC, Móvil</td>
+                <td>8/10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Tabla de Películas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Título de la Película</th>
+                <th>Género</th>
+                <th>Año de Estreno</th>
+                <th>Director</th>
+                <th>Calificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Inception</td>
+                <td>Ciencia Ficción</td>
+                <td>2010</td>
+                <td>Christopher Nolan</td>
+                <td>9/10</td>
+            </tr>
+            <tr>
+                <td>Parasite</td>
+                <td>Drama, Thriller</td>
+                <td>2019</td>
+                <td>Bong Joon-ho</td>
+                <td>9.5/10</td>
+            </tr>
+            <tr>
+                <td>Coco</td>
+                <td>Animación</td>
+                <td>2017</td>
+                <td>Lee Unkrich</td>
+                <td>8.5/10</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Ventana para texto entre la tabla de películas y el contenido multimedia -->
+    <div class="ventana-texto">
+        <h3>¿Qué te parece?</h3>
+        <p>
+        	<br>
+		<b>Este mundo de entretenimiento trae consigo una gran variedad de formas y colores.&lt;3</b>
+		</br>
+
+		<br>
+		Muchas de nuestras tablas y textos son hechos por y para fans.
+		</br>
+		
+		<br>Por ejemplo:  
+            <b>teamomiamor&lt;3</b></br>
+		
+        </p>
+    </div>
+
+    <div class="media-section">
+        <h3>Contenido Especial</h3>
+        <div class="descripcion-video">
+            <br><b>¿Te has enterado de que el juego Cyberpunk 2077 ya tiene una serie animada?</br></b>
+	<br>Aunque no es 100% leal al juego ¡este Cyber Punk animado viene de su mismo universo!</br>
+<br><b>¡Disfrútalo!</br></b>
+        </div>
+        <iframe src="https://www.youtube.com/embed/qIcTM8WXFjk?si=-S3XR3_hcJBSE2y1" allowfullscreen></iframe>
+        <img src="CYBER.jpg" alt="Imagen relacionada">
+    </div>
+
+    <footer>
+        <div class="footer-section left">
+            <h4>Conócenos</h4>
+            <br>Somos un equipo apasionado por los videojuegos y el cine, dedicados a compartir reseñas, noticias y recomendaciones para todos los gustos.</br>
+		<p><br>Hecho por: Fernando Israel López Mendoza y Diana Leidy Flores García</p></br>
+        </div>
+        <div class="footer-section right">
+            <h4>Información de contacto</h4>
+            <p>Email: contacto@juegospelis.com<br>
+            Teléfono: +52 729 335 2816<br>
+            Toluca, México<br>
+		PROYECTO EPO93 3RO 3</p>
+        </div>
+    </footer>
+
+    <script>
+        // Reproducir automáticamente la música de fondo al cargar la página
+        window.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('audio-fondo');
+            // Algunos navegadores requieren interacción del usuario, pero
